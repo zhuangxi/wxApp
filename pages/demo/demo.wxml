@@ -1,0 +1,4 @@
+<!--pages/demo/demo.wxml-->
+<!-- <text>pages/demo/demo.wxml</text> -->
+<view>{{ msg }}</view>
+<button bindtap="changeMsg">切换</button>
