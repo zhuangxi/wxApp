@@ -2,3 +2,7 @@
 <!-- <text>pages/demo/demo.wxml</text> -->
 <view>{{ msg }}</view>
 <button bindtap="changeMsg">切换</button>
+<map bindmarkertap="mapClick"></map>
+<button bindtap="getLocation">获取地理位置</button>
+<text>{{ longitude }} - {{ latitude }}</text>
+<button bindtap="scanCode">扫一扫</button>

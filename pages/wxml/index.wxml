@@ -1,0 +1,21 @@
+<!--pages/wxml/index.wxml-->
+<!-- <text>pages/wxml/index.wxml</text> -->
+<text>当前时间:{{ time }}</text>
+<text data-test="{{test}}"></text>
+<view>
+  <text>{{[1,2,3]}}</text>
+</view>
+<view wx:if="{{condition}}"> True </view>
+<view wx:for="{{persons}}">
+  {{index}}.{{item.name}}-{{item.sex}}
+</view>
+<view wx:for="{{persons}}" wx:for-index="idx" wx:for-item="itemName">
+  {{idx}}.{{itemName.name}}-{{itemName.sex}}
+</view>
+
+<switch wx:for="{{objArray}}" wx:key="unique">{{item.id}}</switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront">add to the front</button>
+
+<switch wx:for="{{numberArray}}">{{item}}</switch>
+<button bindtap="addNumberToFront">Add Number to the front</button>

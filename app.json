@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/wxml/index",
     "pages/index/index",
     "pages/logs/logs",
     "pages/demo/demo"
@@ -10,5 +11,10 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
 }

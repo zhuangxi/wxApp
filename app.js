@@ -1,5 +1,6 @@
 //app.js
 App({
+  // 小程序启动之后 触发
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -9,6 +10,7 @@ App({
     // 登录
     wx.login({
       success: res => {
+        // console.log(res)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })

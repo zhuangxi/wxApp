@@ -5,18 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-    msg: 'hello world'
+    msg: 'hello world',
+    longitude: '',
+    latitude: ''
+    // userInfo: app.globalData.userInfo
   },
-  changeMsg:function(){
+  changeMsg: function(){
     this.setData({msg: "i'm a demo"})
   },
+
+  mapClick: function(data){
+    console.log(data)
+  },
+
+  scanCode: function(){
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+      }
+    })
+  },
+
+  getLocation: function(){
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        console.log(res)
+        this.setData({ longitude: res.longitude, latitude: res.latitude})
+      }
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     wx.getUserInfo({
       success: res => {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
