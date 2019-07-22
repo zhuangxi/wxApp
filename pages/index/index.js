@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    timer: null
   },
   //事件处理函数
   bindViewTap: function() {
@@ -19,6 +20,12 @@ Page({
     wx.navigateTo({
       url: '../demo/demo'
     })
+  },
+  countAll: function(){
+    this.setData({
+      timer: setInterval(() => {
+        console.log(1)
+      }, 1000)})
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -48,6 +55,14 @@ Page({
       })
     }
   },
+  onUnload: function () {
+
+  },
+  onHide: function(){
+    // 清除定时器
+    clearInterval(this.data.timer)
+  },
+  
   getUserInfo: function(e) {
     // console.log(e)
     app.globalData.userInfo = e.detail.userInfo

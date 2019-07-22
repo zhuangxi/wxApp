@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/wxml/index",
     "pages/index/index",
+    "pages/wxml/index",
     "pages/logs/logs",
     "pages/demo/demo"
   ],

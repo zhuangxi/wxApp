@@ -1,4 +1,7 @@
 // pages/wxml/index.js
+var funcs = require('./func.js')
+
+var sayHello = require('./common.js')
 Page({
 
   /**
@@ -41,7 +44,23 @@ Page({
         unique: 'unique_0'
       }
     ],
-    numberArray: [1, 2, 3, 4]
+    numberArray: [1, 2, 3, 4],
+    item: {
+      index: 0,
+      msg: 'this is a template',
+      time: '2016-06-18'
+    }
+  },
+
+  helloMina: function(){
+    sayHello('Minaxi')
+  },
+  hello: function(e){
+    let name = e.currentTarget.dataset['name']
+    funcs.hello(name)
+  },
+  goodbye: function(e){
+    funcs.goodbye('kjk76')
   },
 
   switch: function() {
@@ -79,7 +98,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    
   },
 
   /**
@@ -91,6 +110,7 @@ Page({
 
   /**
    * 生命周期函数--监听页面显示
+   * 进入小程序之后，用户可以点击右上角的关闭，或者按手机设备的Home键离开小程序，此时小程序并没有被直接销毁，我们    * 把这种情况称为“小程序进入后台状态”，App构造器参数所定义的onHide方法会被调用。
    */
   onShow: function() {
 
@@ -98,6 +118,7 @@ Page({
 
   /**
    * 生命周期函数--监听页面隐藏
+   * 当再次回到微信或者再次打开小程序时，微信客户端会把“后台”的小程序唤醒，我们把这种情况称为“小程序进入前台状态”    * ，App构造器参数所定义的onShow方法会被调用。
    */
   onHide: function() {
 
@@ -128,6 +149,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title: '分享',
+      path: '/page/user?id=123'
+    }
   }
 })
