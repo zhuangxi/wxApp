@@ -6,3 +6,4 @@
 <button bindtap="getLocation">获取地理位置</button>
 <text>{{ longitude }} - {{ latitude }}</text>
 <button bindtap="scanCode">扫一扫</button>
+<view id="tapTest" data-hi="wechat" bindtap="tapName">click me</view>

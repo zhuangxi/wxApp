@@ -8,6 +8,8 @@
     </block>
     <button bindtap="goTodemo">点击我</button>
     <button bindtap="countAll">count</button>
+    <button bindtap="goToIndex">组件</button>
+    <button bindtap="goToEvent">事件系统</button>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>

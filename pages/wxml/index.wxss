@@ -1,1 +1,7 @@
 /* pages/wxml/index.wxss */
+@import "button.wxss";
+.time{
+  font-size: 16px;
+  color: red;
+}
+

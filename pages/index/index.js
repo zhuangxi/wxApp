@@ -21,6 +21,16 @@ Page({
       url: '../demo/demo'
     })
   },
+  goToIndex: function(){
+    wx.navigateTo({
+      url: '../wxml/index'
+    })
+  },
+  goToEvent: function(){
+    wx.navigateTo({
+      url: '../event/event'
+    })
+  },
   countAll: function(){
     this.setData({
       timer: setInterval(() => {

@@ -1,0 +1,12 @@
+<!--pages/event/event.wxml-->
+<text>pages/event/event.wxml</text>
+
+<view id="outer" bindtap="handle1">
+  outer view
+  <view id="middle" catchtap="handle2">
+    middle view
+    <view id="inner" bindtap="handle3">
+      inner view
+    </view>
+  </view>
+</view>

@@ -1,25 +1,32 @@
 <!--pages/wxml/index.wxml-->
 <!-- <text>pages/wxml/index.wxml</text> -->
-<text>当前时间:{{ time }}</text>
+<text class='time'>当前时间:{{ time }}</text>
 <text data-test="{{test}}"></text>
 <view>
   <text>{{[1,2,3]}}</text>
 </view>
+<!-- 条件渲染 -->
 <view wx:if="{{condition}}"> True </view>
+
+<view wx:if="{{flag == 1}}">1</view>
+<view wx:elif="{{flag == 2}}">2</view>
+<view wx:else="{{flag == 3}}">3</view>
+
+<!-- 列表渲染 -->
 <view wx:for="{{persons}}">
   {{index}}.{{item.name}}-{{item.sex}}
 </view>
 <view wx:for="{{persons}}" wx:for-index="idx" wx:for-item="itemName">
   {{idx}}.{{itemName.name}}-{{itemName.sex}}
 </view>
-
 <switch wx:for="{{objArray}}" wx:key="unique">{{item.id}}</switch>
 <button bindtap="switch"> Switch </button>
 <button bindtap="addToFront">add to the front</button>
 
 <switch wx:for="{{numberArray}}">{{item}}</switch>
-<button bindtap="addNumberToFront">Add Number to the front</button>
+<button class="front" bindtap="addNumberToFront">Add Number to the front</button>
 
+<!-- 模板 -->
 <template name="msgItem">
   <view>
     <text>{{ index }}: {{ msg }}</text>

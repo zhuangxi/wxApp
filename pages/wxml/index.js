@@ -10,6 +10,7 @@ Page({
   data: {
     time: (new Date()).toString(),
     condition: true,
+    flag: 1,
     persons: [{
         name: 'jack',
         sex: 'man'
